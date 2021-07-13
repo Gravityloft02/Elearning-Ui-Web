@@ -1,0 +1,54 @@
+﻿  <!-- BEGIN: Main Menu-->
+
+<div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true">
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" nav-item">
+                <a href="@Url.Action("Index","Default")"><i class="la la-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span>@*<span class="badge badge badge-info badge-pill float-right mr-2">3</span>*@</a>
+                @*<ul class="menu-content">
+                    <li>
+                        <a class="menu-item" href="#"><i></i><span data-i18n="eCommerce">eCommerce</span></a>
+                    </li>
+                    <li class="active">
+                        <a class="menu-item" href="#"><i></i><span data-i18n="Crypto">Crypto</span></a>
+                    </li>
+
+                </ul>*@
+            </li>
+            <li class=" navigation-header">
+                <span>Management</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Management"></i>
+            </li>
+            <li class=" nav-item">
+                <a href="@Url.Action("Index","Schools",new { area = "Management" })" target="_blank"><i class="la la-building"></i><span class="menu-title" data-i18n="School">School</span></a>
+            </li>
+            <li class=" nav-item">
+                <a href="@Url.Action("Index","Student",new { area = "Students" })" target="_blank"><i class="la la-user"></i><span class="menu-title" data-i18n="Student">Student</span></a>
+            </li>
+            <li class=" nav-item">
+                <a href="@Url.Action("Index","Teachers",new { area = "Management" })" target="_blank"><i class="la la-list"></i><span class="menu-title" data-i18n="Teacher">Teacher</span></a>
+            <li class=" nav-item">
+                <a href="@Url.Action("Index","Subjects",new { area = "Management" })" target="_blank"><i class="la la-sticky-note"></i><span class="menu-title" data-i18n="Subjects">Subjects</span></a>
+            </li>
+            <li class=" nav-item">
+                <a href="@Url.Action("Index","Parent",new { area = "Students" })" target="_blank"><i class="la la-pencil"></i><span class="menu-title" data-i18n="Parents">Parents</span></a>
+            </li>
+
+            <li class=" navigation-header">
+                <span>Admin</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Admin"></i>
+            </li>
+            <li class=" nav-item">
+                <a href="#" target="_blank"><i class="la la-paper-plane"></i><span class="menu-title" data-i18n="Admin">Admin</span></a>
+            </li>
+
+
+            <li class=" navigation-header">
+                <span>Support</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Support"></i>
+            </li>
+            <li class=" nav-item">
+                <a href="#" target="_blank"><i class="la la-support"></i><span class="menu-title" data-i18n="Raise Support">Raise Support</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- END: Main Menu-->

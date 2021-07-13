@@ -1,0 +1,317 @@
+﻿
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ERPSchoolManagementWeb.Models.TeacherModel
+
+<div class="content-header row">
+    <div class="content-header-left col-md-6 col-12 mb-2">
+        <h3 class="content-header-title">Book Appointment</h3>
+        <div class="row breadcrumbs-top">
+            <div class="breadcrumb-wrapper col-12">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="@Url.Action("Index","Default")">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="@Url.Action("Index","Teacher",new{area="Management"})">Teachers</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        Add Teacher
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    @*<div class="content-header-right col-md-6 col-12">
+        <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
+            <button class="btn btn-info round dropdown-toggle dropdown-menu-right box-shadow-2 px-2 mb-1" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ft-settings icon-left"></i> Settings</button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1"><a class="dropdown-item" href="card-bootstrap.html">Cards</a><a class="dropdown-item" href="component-buttons-extended.html">Buttons</a></div>
+        </div>
+    </div>*@
+</div>
+<div class="content-body">
+    <!-- Add School -->
+    <section id="add-teacher">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Add New Teacher</h2>
+            </div>
+            <div class="card-body">
+                <form method="post" id="Teacher_Form" name="Teacher_Form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>First Name: <span class="text-danger" style="font-size:25px;font-weight:bold;">*</span></label>
+                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control rounded-right", @placeholder = "Enter your First Name" } })
+                                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger", id = "err1" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Last Name: <span class="text-danger" style="font-size:25px;font-weight:bold;">*</span></label>
+                                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control rounded-right", @placeholder = "Enter your Last Name" } })
+                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger", id = "err2" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Email: <span class="text-danger" style="font-size:25px;font-weight:bold;">*</span></label>
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control rounded-right", @placeholder = "Enter your Email Address" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", id = "err3" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Telephone No.</label>
+                            @Html.EditorFor(model => model.PhoneNo, new { htmlAttributes = new { @class = "form-control rounded-right", @placeholder = "Enter School Telephone No.", maxlength = "20", minlength = "10", @onkeypress = "return onlyNumberKey(event)" } })
+                            @Html.ValidationMessageFor(model => model.PhoneNo, "", new { @class = "text-danger", id = "err3" })
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Mobile No.</label>
+                            @Html.EditorFor(model => model.MobileNo, new { htmlAttributes = new { @class = "form-control rounded-right", @placeholder = "Enter School Mobile No.", maxlength = "10", minlength = "10", @onkeypress = "return onlyNumberKey(event)" } })
+                            @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger", id = "err4" })
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Password: <span class="text-danger" style="font-size:25px;font-weight:bold;">*</span></label>
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control rounded-right", @placeholder = "Enter your Password" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger", id = "err5" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Confirm Password: <span class="text-danger" style="font-size:25px;font-weight:bold;">*</span></label>
+                                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control rounded-right", @placeholder = "Enter your Confirm Password" } })
+                                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger", id = "err6" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Date of Birth: <span class="text-danger" style="font-size:25px;font-weight:bold;">*</span></label>
+                                @Html.EditorFor(model => model.Dob, new { htmlAttributes = new { @class = "form-control rounded-right", @placeholder = "Enter your Date of Birth" } })
+                                @Html.ValidationMessageFor(model => model.Dob, "", new { @class = "text-danger", id = "err7" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Date of Joining: <span class="text-danger" style="font-size:25px;font-weight:bold;">*</span></label>
+                                @Html.EditorFor(model => model.DateOfJoin, new { htmlAttributes = new { @class = "form-control rounded-right", @placeholder = "Enter your Joining Date" } })
+                                @Html.ValidationMessageFor(model => model.DateOfJoin, "", new { @class = "text-danger", id = "err8" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer ml-auto">
+                        <button type="submit" class="btn btn-outline-success mr-1" id="submitAddTeacher">Submit</button>
+                        <button type="submit" class="btn btn-outline-danger" id="cancelAddTeacher">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section Scripts {
+    
+
+    <script>
+        function onlyNumberKey(evt) {
+
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                return false;
+            return true;
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#submitAddTeacher').click(function () {
+                if (TeacherValidation()) {
+                    GetTeacher();
+                }
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        function TeacherValidation() {
+            var isvalid = true;
+            var firstname = $('#FirstName').val();
+            var lastname = $('#LastName').val();
+            var contact = $('#PhoneNo').val();
+            var mobile = $('#MobileNo').val();
+            var email = $('#Email').val();
+            var password = $('#Password').val();
+            var cnfrm = $('#ConfirmPassword').val();
+
+            //namecheck
+            if (firstname == "") {
+                document.getElementById('err1').innerHTML = "Please fill the FirstName field!";
+                return false;
+            }
+
+            if ((firstname.length < 2) || (firstname.length > 100)) {
+                document.getElementById('err1').innerHTML = "Length of the Firstname would be greater than 2 and less than 100";
+                return false;
+            }
+            if (!isNaN(firstname)) {
+                document.getElementById('err1').innerHTML = "Only characters are allowed";
+                return false;
+            } 
+            if (lastname == "") {
+                document.getElementById('err2').innerHTML = "Please fill the LastName field!";
+                return false;
+            }
+
+            if ((lastname.length < 2) || (lastname.length > 100)) {
+                document.getElementById('err2').innerHTML = "Length of the LastName would be greater than 2 and less than 100";
+                return false;
+            }
+            if (!isNaN(lastname)) {
+                document.getElementById('err2').innerHTML = "Only characters are allowed";
+                return false;
+            }
+
+
+
+            //if (contact == "") {
+            //    document.getElementById('err3').innerHTML = "Please fill the Telephone field!";
+            //    return false;
+            //}
+
+            //if (isNaN(contact)) {
+            //    document.getElementById('err3').innerHTML = "Only numbers are allowed";
+            //    return false;
+            //}
+
+            //if (contact.length != 10) {
+            //    document.getElementById('err3').innerHTML = "Contact must contain 10 digits";
+            //    return false;
+            //}
+
+            //if (mobile == "") {
+            //    document.getElementById('err4').innerHTML = "Please fill the Mobile field!";
+            //    return false;
+            //}
+
+            //if (isNaN(mobile)) {
+            //    document.getElementById('err4').innerHTML = "Only numbers are allowed";
+            //    return false;
+            //}
+
+            //if (mobile.length != 10) {
+            //    document.getElementById('err4').innerHTML = "Contact must contain 10 digits";
+            //    return false;
+            //}
+
+            //email check
+            if (email == "") {
+                document.getElementById('err3').innerHTML = "Please fill the Email field!";
+                return false;
+            }
+
+            @*if (email.indexOf('+ @ + ') <= 0) {
+                document.getElementById('err5').innerHTML = "Position of '@' is not valid";
+                return false;
+            }*@
+
+            if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
+                document.getElementById('err3').innerHTML = "Postion of '.' is invalid";
+                return false;
+            }
+
+            if (password == "") {
+                document.getElementById('err5').innerHTML = "Please fill the Password field!";
+                return false;
+            }
+            if ((password.length < 5) || (password.length > 100)) {
+                document.getElementById('err5').innerHTML = "Length of the Password would be greater than 5 and less than 100";
+                return false;
+            }
+            if (cnfrm == "") {
+                document.getElementById('err6').innerHTML = "Please fill the Confirm Password field!";
+                return false;
+            }
+            if ((cnfrm.length < 5) || (cnfrm.length > 100)) {
+                document.getElementById('err6').innerHTML = "Length of the Confirm Password would be greater than 5 and less than 100";
+                return false;
+            }
+            if (password !== cnfrm) {
+                document.getElementById('err6').innerHTML = "Both Passwords does not match";
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+        function validateTeacherform() {
+            var isvalid = true;
+
+            var firstname = $('#FirstName').val();
+            var lastname = $('#LastName').val();
+            var contact = $('#PhoneNo').val();
+            var mobile = $('#MobileNo').val();
+            var email = $('#Email').val();
+            var password = $('#Password').val();
+            var cnfrm = $('#ConfirmPassword').val();
+
+            if (firstname == null || firstname == "" || lastname == null || lastname == "" || email == null || email == "") {
+                alert('some fields are empty');
+                isvalid = false;
+            }
+            return isvalid;
+
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+
+        function GetTeacher() {
+            if (validateTeacherform()) {
+                var result = $("#Teacher_Form").serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: '/Management/Teachers/AddTeacher',
+                    //data: '{email: ' + JSON.stringify($('#EmailId').val()) + '}',
+                    dataType: "json",
+
+                    data: $("#Teacher_Form").serialize(),
+
+                    success: function (res) {
+                        if (res) {
+                            alert("Teacher is Added.");
+                            window.location.href = "/Management/Teachers/Index";
+                        }
+                    },
+                    error: function (res) {
+                        
+                            alert("Please try after sometime");
+                         
+                    },
+                });
+            }
+        }
+    </script>
+
+}

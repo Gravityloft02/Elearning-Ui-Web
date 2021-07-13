@@ -1,0 +1,2 @@
+D:\Gravityloft\ERPSchoolManagementWeb\ERPSchoolManagementWeb\obj\Release\ERPSchoolManagementWeb.csprojAssemblyReference.cache
+D:\Gravityloft\ERPSchoolManagementWeb\ERPSchoolManagementWeb\obj\Release\ERPSchoolManagementWeb.csproj.CoreCompileInputs.cache
